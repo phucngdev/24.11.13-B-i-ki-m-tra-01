@@ -1,0 +1,68 @@
+﻿<Window x:Class="NguyenMinhPhuc_DCCTCT66_05C.FrmHoaTuoi_2121050560_NguyenMinhPhuc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NguyenMinhPhuc_DCCTCT66_05C"
+        Title="Quản Lý Hoa Tươi" Height="500" Width="900">
+
+    <Grid Margin="-122,0,0,14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="261*"/>
+            <RowDefinition Height="86*"/>
+            <RowDefinition Height="30*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Tìm kiếm -->
+        <GroupBox Header="Tìm kiếm" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,260" Grid.RowSpan="2">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="txtMaHoaTuoi" Width="100" Margin="5" Text="Mã hoa tươi"/>
+                <TextBox Name="txtTenHoaTuoi" Width="200" Margin="5" Text="Tên hoa tươi"/>
+                <Button Name="btnTimKiem" Content="Tìm kiếm" Width="100" Margin="5" Click="btnTimKiem_Click"/>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Danh sách hoa tươi -->
+        <DataGrid Name="dgvDanhSach" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                  AutoGenerateColumns="True" SelectionChanged="dgvDanhSach_SelectionChanged" Grid.RowSpan="2" />
+
+        <!-- Chi tiết hoa tươi -->
+        <GroupBox Name="grbChiTiet" Header="Chi tiết" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+            <StackPanel Margin="150,0,-2,0" Height="349">
+                <TextBox Name="txtMaHoaTuoiChiTiet" IsReadOnly="True" Margin="5" Text="Mã hoa tươi"/>
+                <TextBox Name="txtTenHoaTuoiChiTiet" Margin="5" Text="Tên hoa tươi"/>
+                <DatePicker Name="dtpNgaySX" Margin="5"/>
+                <DatePicker Name="dtpNgayHH" Margin="5"/>
+                <TextBox x:Name="txtDonVi" Text="Đơn vị" Height="23" Width="849"/>
+                <TextBox Name="txtDonGia" Margin="5" Text="Đơn giá"/>
+                <TextBox Name="txtGhiChu" Margin="5" Text="Ghi chú"/>
+                <StackPanel Orientation="Horizontal" Width="843" RenderTransformOrigin="0.497,3.47">
+                    <Button x:Name="btnLuu" Content="Lưu" Width="75" Margin="5" Click="btnLuu_Click"/>
+                    <Button x:Name="btnHuy" Content="Huỷ" Width="75" Margin="5" Click="btnHuy_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Các nút chức năng -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Left" Margin="160,322,0,54" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <Button Name="btnThem" Content="Thêm" Width="100" Margin="5" Click="btnThem_Click" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.829"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+            <Button Name="btnSua" Content="Sửa" Width="100" Margin="5" Click="btnSua_Click"/>
+            <Button Name="btnXoa" Content="Xoá" Width="100" Margin="5" Click="btnXoa_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
